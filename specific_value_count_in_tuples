@@ -1,0 +1,12 @@
+def count_value(t, value):
+    count = 0
+    for item in t:
+        if isinstance(item, tuple):
+            count += count_value(item, value)
+        else:
+            if item == value:
+                count += 1
+    return count
+
+person = ("John", 25, ("Engineer", "New York", 25))
+print(count_value(person, 25)) 
