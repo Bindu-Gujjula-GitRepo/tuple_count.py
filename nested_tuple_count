@@ -1,0 +1,11 @@
+def count_elements(t):
+    count = 0
+    for item in t:
+        if isinstance(item, tuple):
+            count += count_elements(item)  # Recursive call for nested tuple
+        else:
+            count += 1
+    return count
+
+person = ("John", 25, ("Engineer", "New York"))
+print(count_elements(person))
